@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NowPlayingActivity">
+
+    <TextView
+        android:id="@+id/description_now_playing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nowPlayingDescription" />
+    <!--Main Image imageview-->
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_image"
+        android:layout_below="@id/description_now_playing"
+        android:padding="@dimen/padding"
+        android:src="@drawable/now_playing" />
+    <!--Seekbar view-->
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image"
+        android:layout_marginTop="@dimen/margin_seekbar" />
+    <!--Song Name textview-->
+    <TextView
+        android:id="@+id/song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:paddingLeft="@dimen/padding"
+        android:text="@string/song"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+    <!--Artist Name textview-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/song"
+        android:paddingLeft="@dimen/padding"
+        android:text="@string/artist"
+        android:textColor="@android:color/black" />
+    <!--Play button imageview-->
+    <ImageView
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seekbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_controls"
+        android:src="@drawable/ic_play_circle_filled_black_48dp" />
+    <!--Next track button imageview-->
+    <ImageView
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seekbar"
+        android:layout_marginLeft="@dimen/next_left_margin"
+        android:layout_marginTop="@dimen/margin_controls"
+        android:layout_toRightOf="@id/play"
+        android:src="@drawable/ic_skip_next_black_48dp" />
+    <!--Previous track button imageview-->
+    <ImageView
+        android:id="@+id/previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seekbar"
+        android:layout_marginRight="@dimen/previous_right_margin"
+        android:layout_marginTop="@dimen/margin_controls"
+        android:layout_toLeftOf="@id/play"
+        android:src="@drawable/ic_skip_previous_black_48dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/play"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_controls"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/now_playing_button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="@dimen/view_width"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black" />
+
+        <Button
+            android:id="@+id/now_playing_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="@dimen/view_width"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black" />
+
+        <Button
+            android:id="@+id/now_playing_button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="@dimen/view_width"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black" />
+
+        <Button
+            android:id="@+id/now_playing_button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="list_item_height">88dp</dimen>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="main_image">300dp</dimen>
+    <dimen name="margin_seekbar">50dp</dimen>
+    <dimen name="margin_controls">25dp</dimen>
+    <dimen name="previous_right_margin">50dp</dimen>
+    <dimen name="next_left_margin">50dp</dimen>
+    <dimen name="list_item_text_height">0dp</dimen>
+    <dimen name="list_play_button_height">24dp</dimen>
+    <dimen name="list_play_button_width">24dp</dimen>
+    <dimen name="text_size_paypal">44sp</dimen>
+    <dimen name="button_margin_left">25dp</dimen>
+    <dimen name="button_margin_right">25dp</dimen>
+    <dimen name="layout_margin_top">20dp</dimen>
+    <dimen name="button_width">70dp</dimen>
+    <dimen name="view_width">1dp</dimen>
+</resources>

@@ -1,0 +1,102 @@
+<resources>
+    <string name="app_name">Music App</string>
+    <string name="mainActivity">Main Screen</string>
+    <string name="mainActivityText">This is the main activity from where the app starts.It contains 4 textviews which on clicking opens respective activity.</string>
+    <string name="nowPlayingDescription">This Activity shows the current playing song along with its thumbnail
+    and three buttons that are play/pause , next and previous.</string>
+    <string name="tracks_text">This Activity shows the list of songs in alphabetical order of song name.</string>
+    <string name="artist_text">This Activity shows the list of artists in alphabetical order of artist name.</string>
+    <string name="track">Tracks</string>
+    <string name="nowPlaying">Now Playing</string>
+    <string name="paymentText">Payment</string>
+    <string name="artist">Artist</string>
+    <string name="song">Song</string>
+    <string name="artist1">Artist1</string>
+    <string name="artist2">Artist2</string>
+    <string name="artist3">Artist3</string>
+    <string name="artist4">Artist4</string>
+    <string name="artist5">Artist5</string>
+    <string name="song1">Song1</string>
+    <string name="song2">Song2</string>
+    <string name="song3">Song3</string>
+    <string name="song4">Song4</string>
+    <string name="song5">Song5</string>
+    <string name="paypal">PayPal Library</string>
+    <string name="paymentView">"@Override\n"
+                "    protected void onCreate(Bundle savedInstanceState) {\n"
+                "        super.onCreate(savedInstanceState);\n"
+                "        setContentView(R.layout.activity_payment);\n"
+                "    }\n"
+                "    public void initLibrary() {\n"
+                "        PayPal pp = PayPal.getInstance();\n"
+                "\n"
+                "        if (pp == null) {  // Test to see if the library is already initialized\n"
+                "\n"
+                "            // This main initialization call takes your Context, AppID, and target server\n"
+                "            pp = PayPal.initWithAppID(this, \"APP-80W284485P519543T\", PayPal.ENV_NONE);\n"
+                "\n"
+                "            // Required settings:\n"
+                "\n"
+                "            // Set the language for the library\n"
+                "            pp.setLanguage(\"en_US\");\n"
+                "\n"
+                "            // Some Optional settings:\n"
+                "\n"
+                "            // Sets who pays any transaction fees. Value is:\n"
+                "            // FEEPAYER_SENDER, FEEPAYER_PRIMARYRECEIVER, FEEPAYER_EACHRECEIVER, and FEEPAYER_SECONDARYONLY\n" +
+                "            pp.setFeesPayer(PayPal.FEEPAYER_EACHRECEIVER);\n"
+                "\n"
+                "            // true = transaction requires shipping\n"
+                "            pp.setShippingEnabled(true);\n"
+                "\n"
+                "            boolean _paypalLibraryInit = true;\n"
+                "        }\n"
+                "    }\n"
+                "\n"
+                "    @RequiresApi(api = Build.VERSION_CODES.N)\n"
+                "    public void PayPalButtonClick(View arg0) {\n"
+                "        // Create a basic PayPal payment\n"
+                "        PayPalPayment payment = new PayPalPayment();\n"
+                "\n"
+                "        // Set the currency type\n"
+                "        payment.setCurrencyType(\"USD\");\n"
+                "\n"
+                "        // Set the recipient for the payment (can be a phone number)\n"
+                "        payment.setRecipient(\"ppalav_1285013097_biz@yahoo.com\");\n"
+                "\n"
+                "        // Set the payment amount, excluding tax and shipping costs\n"
+                "        payment.setSubtotal(new BigDecimal(_theSubtotal));\n"
+                "\n"
+                "        // Set the payment type--his can be PAYMENT_TYPE_GOODS,\n"
+                "        // PAYMENT_TYPE_SERVICE, PAYMENT_TYPE_PERSONAL, or PAYMENT_TYPE_NONE\n"
+                "        payment.setPaymentType(PayPal.PAYMENT_TYPE_GOODS);\n"
+                "\n"
+                "        // PayPalInvoiceData can contain tax and shipping amounts, and an\n"
+                "        // ArrayList of PayPalInvoiceItem that you can fill out.\n"
+                "        // These are not required for any transaction.\n"
+                "        PayPalInvoiceData invoice = new PayPalInvoiceData();\n"
+                "\n"
+                "        // Set the tax amount\n"
+                "        invoice.setTax(new BigDecimal(_taxAmount));\n"
+                "    }\n"
+                "    public void PayPalActivityResult(int requestCode, int resultCode, Intent intent) {\n"
+                "        switch (resultCode) {\n"
+                "            // The payment succeeded\n"
+                "            case PaymentActivity.RESULT_OK:\n"
+                "                String payKey = intent.getStringExtra(PayPalActivity.EXTRA_PAY_KEY);\n"
+                "                this.paymentSucceeded(payKey);\n"
+                "                break;\n"
+                "\n"
+                "            // The payment was canceled\n"
+                "            case Activity.RESULT_CANCELED:\n"
+                "                this.paymentCanceled();\n"
+                "                break;\n"
+                "\n"
+                "            // The payment failed, get the error from the EXTRA_ERROR_ID and EXTRA_ERROR_MESSAGE\n"
+                "            case PayPalActivity.RESULT_FAILURE:\n"
+                "                String errorID = intent.getStringExtra(PayPalActivity.EXTRA_ERROR_ID);\n"
+                "                String errorMessage = intent.getStringExtra(PayPalActivity.EXTRA_ERROR_MESSAGE);\n"
+                "                this.paymentFailed(errorID, errorMessage);\n"
+                "        }\n"
+                "    }"</string>
+</resources>
